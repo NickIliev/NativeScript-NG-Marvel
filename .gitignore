@@ -2,6 +2,7 @@
 lib/
 node_modules/
 platforms/*
+files/*
 
 /app/**/*.js
 /app/**/*.map
@@ -10,6 +11,6 @@ platforms/*
 *.apk
 *.ipa
 
-native-nick-release-key.jks
-my-release-key.jks
+marvel-almanac.keystore
+
 google-services.json

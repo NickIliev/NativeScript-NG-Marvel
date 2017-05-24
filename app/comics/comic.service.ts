@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { ComicsServerResponse, Data, Comic } from "./comic";
 import { Observable as RxObservable } from 'rxjs/Rx';
+import { API_KEY, COMICS_URL, LIMIT } from "../files/credentials";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -11,9 +12,9 @@ export class ComicService {
     private _etag: string;
     private _code: number;
 
-    private _comicsUrl: string = "https://gateway.marvel.com/v1/public/comics";
-    private _key: string = "?ts=1&apikey=ba6b3f50e03ce86e096a4de5a89f18eb&hash=209d0cef2e3cdb793c6770e701f87566";
-    private _limit: string = "&limit=100";
+    private _comicsUrl: string = COMICS_URL;
+    private _key: string = API_KEY;
+    private _limit: string = LIMIT;
     private _offset: number = 0; // use offset for loadOnDemand
 
     constructor(private http: Http) { }
