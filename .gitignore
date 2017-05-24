@@ -12,5 +12,5 @@ files/*
 *.ipa
 
 marvel-almanac.keystore
-
+credentials.ts
 google-services.json
