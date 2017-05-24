@@ -1,0 +1,14 @@
+<ActionBar title="Marvel Universe Almanac" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <ListView [items]="comics" class="list-group">
+        <ng-template let-comic="item">
+            <GridLayout rows="auto, *" columns="*, 4*" [nsRouterLink]="['/comic', comic.id]"  class="list-group-item">
+                <Label row="0" col="0" [text]="comic.id"></Label>
+                <Label row="0" col="1" [text]="comic.title" class="list-group-item"></Label>
+                <Image row="1" col="0" colSpan="2" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" loadMode="async"></Image>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+    <Label text="Data provided by Marvel. © 2014 Marvel" textWrap="true" class="note"></Label>
+</StackLayout>

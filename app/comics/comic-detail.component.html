@@ -1,0 +1,11 @@
+<ActionBar title="Details" class="action-bar"></ActionBar>
+<StackLayout class="page p-20">
+    <GridLayout rows="auto" columns="*, 3*" backgroundColor="lightgray">
+        <Label col="0" class="h3" [text]="comic.id"></Label>
+        <Label col="1" class="h2" [text]="comic.title" textWrap="true"></Label>
+    </GridLayout>
+    <Label [text]="comic.description" class="body" textWrap="true"></Label>
+    <Image [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" loadMode="async"></Image> 
+    <Label [text]="'stories: ' + comic.stories.available" textWrap="true" class="body"></Label>
+    <Label text="Data provided by Marvel. © 2014 Marvel" textWrap="true" class="note"></Label>
+</StackLayout>
