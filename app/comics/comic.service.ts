@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { ComicsServerResponse, Data, Comic } from "./comic";
+import { ComicsServerResponse, Data, Comic } from "../models/comic";
 import { Observable as RxObservable } from 'rxjs/Rx';
 import { API_KEY, COMICS_URL, LIMIT } from "../files/credentials";
 import 'rxjs/add/operator/map';
