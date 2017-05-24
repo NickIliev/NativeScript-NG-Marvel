@@ -2,7 +2,7 @@
 lib/
 node_modules/
 platforms/*
-files/*
+app/files/*
 
 /app/**/*.js
 /app/**/*.map
