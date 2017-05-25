@@ -1,15 +1,20 @@
-<ActionBar title="Marvel Universe Almanac" class="action-bar">
+<ActionBar>
+    <StackLayout>
+        <Label text="Marvel Universe Almanac" textWrap="true" class="h2 action-bar-title"></Label>
+    </StackLayout>
 </ActionBar>
 <GridLayout rows="50, 100, *, 40" (loaded)="onGridLoaded($event)" class="page">
-    <Label row="0" text="Marvel Comsic Search" textWrap="true" class="h2"></Label>
-    <SearchBar row="1" hint="Search Comics" text="" (textChange)="onTextChanged($event)" (loaded)="onSearchLoaded($event)" (submit)="onSubmit($event)" class="search-bar"></SearchBar>
+    <Label row="0" text="Comics Search" textWrap="true" class="h2 text-center"></Label>
+    <SearchBar row="1" hint="Search Comics" text="" (textChange)="onTextChanged($event)" (loaded)="onSearchLoaded($event)" (submit)="onSubmit($event)" ></SearchBar>
     <ListView row="2" [items]="comics" class="list-group">
         <ng-template let-comic="item">
-            <GridLayout rows="50, *" columns="*, 4*" [nsRouterLink]="['/comic', comic.id]"  class="list-group-item">
-                <Label row="0" col="0" [text]="comic.id"></Label>
-                <Label row="0" col="1" [text]="comic.title" class="list-group-item"></Label>
-                <Image row="1" col="0" colSpan="2" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" loadMode="async"></Image>
-            </GridLayout>
+            <CardView class="cardStyle" margin="10" elevation="40" radius="1" >
+                <GridLayout rows="50, 300" columns="*, 4*" [nsRouterLink]="['/comic', comic.id]"  class="list-group-item">
+                    <Label row="0" col="0" [text]="comic.id"></Label>
+                    <Label row="0" col="1" [text]="comic.title" class="list-group-item"></Label>
+                    <Image row="1" col="0" colSpan="2" [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" loadMode="async"></Image>
+                </GridLayout>
+            </CardView>
         </ng-template>
     </ListView>
     <Label row="3" text="Data provided by Marvel. © 2014 Marvel" textWrap="true" class="note"></Label>

@@ -9,6 +9,8 @@ import { ComicService } from "./comics/comic.service";
 import { ComicsComponent } from "./comics/comics.component";
 import { ComicDetailComponent } from "./comics/comic-detail.component";
 
+import { registerElement } from "nativescript-angular/element-registry";
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -30,4 +32,7 @@ import { ComicDetailComponent } from "./comics/comic-detail.component";
         NO_ERRORS_SCHEMA
     ]
 })
+
 export class AppModule { }
+
+registerElement("CardView", () => require("nativescript-cardview").CardView);
